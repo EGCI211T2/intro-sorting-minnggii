@@ -2,10 +2,10 @@
 
 void swap(int &a,int &b)
 {
-    int *temp;
-    temp = &a;
+    int temp;
+    temp = a;
     a = b;
-    b = *temp;
+    b = temp;
 }
 
 void display(int a[],int N)
