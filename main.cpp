@@ -26,8 +26,12 @@ int main(int argc, char * argv[]) {
     cout<<"Before sorting:";
     display(a,N);
     
-    sort(a,N);
-    cout<<"After sorting:";
+    /*selectionsort(a,N);
+    cout<<"After bubble sort:";
+    display(a,N);*/
+
+    selectionsort(a,N);
+    cout<<"After selection sort:";
     display(a,N);
     
     delete []a;
