@@ -46,20 +46,33 @@ void bubblesort(int *a,int N)
 void selectionsort(int *a, int N)
 {
     int min = a[0], mi = 0, i, j;
+    int *p;
     for(j = 0; j < N-1; j++)
     {
-        min = a[j];
-        mi = j;
+        p = &a[j];
         for(i = j+1; i < N; i++)
         {
-            if(min > a[i])
+            if(*p > a[i])
             {
-                min = a[i];
-                mi = i;
+                p = &a[i];
             }
         }
-    swap(a[j], a[mi]);
+    swap(a[j], *p);
     }
     
 }
 
+void insertionsort(int a[],int N){
+  int new_num, i, j;
+  for(j = 1; j < N; j++)
+  {
+    new_num = a[j];
+    for(i = j-1; i >= 0 && new_num < a[i]; i--)
+    {
+        a[i+1] = a[i];
+        display(a, N);
+    }
+    a[i+1] = new_num;
+  }
+
+}
